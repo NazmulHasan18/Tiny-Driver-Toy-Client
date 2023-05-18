@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
 import GoogleLogin from "../shared/GoogleLogin/GoogleLogin";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
+import { toast } from "react-toastify";
 
 const Register = () => {
+   const { user, signUpWithEmailPass } = useContext(AuthContext);
+
    const [show, setShow] = useState(false);
 
    const handelRegister = (event) => {
@@ -11,7 +15,17 @@ const Register = () => {
       const name = form.name.value;
       const email = form.email.value;
       const password = form.password.value;
-      console.log(email, password, name);
+      signUpWithEmailPass(email, password)
+         .then((userCredential) => {
+            const user = userCredential.user;
+            toast.success("User Registered Successfully");
+            console.log(user);
+            form.reset();
+         })
+         .catch((error) => {
+            const errorMessage = error.message;
+            toast.error(errorMessage);
+         });
    };
    return (
       <div className="hero min-h-screen bg-blue-100">
@@ -74,9 +88,15 @@ const Register = () => {
                         </div>
                      </div>
                      <div className="form-control mt-6">
-                        <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg">
-                           Register
-                        </button>
+                        {user ? (
+                           <button className="btn-disabled text-blue-900 font-semibold py-3 px-4 rounded-lg">
+                              Register
+                           </button>
+                        ) : (
+                           <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg">
+                              Register
+                           </button>
+                        )}
                      </div>
                   </form>
                   <div className="divider">OR</div>

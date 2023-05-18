@@ -4,7 +4,7 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 import { toast } from "react-toastify";
 
 const GoogleLogin = () => {
-   const { googleSignUp } = useContext(AuthContext);
+   const { user, googleSignUp } = useContext(AuthContext);
 
    const handelGoogleSignUp = () => {
       googleSignUp()
@@ -22,9 +22,18 @@ const GoogleLogin = () => {
 
    return (
       <div className="form-control">
-         <button className="btn btn-outline btn-primary hover:bg-blue-700" onClick={handelGoogleSignUp}>
-            <FaGoogle className="mx-2 text-xl"></FaGoogle> <span>Continue With Google</span>
-         </button>
+         {user ? (
+            <button
+               className="btn btn-outline btn-primary btn-disabled hover:bg-blue-700"
+               onClick={handelGoogleSignUp}
+            >
+               <FaGoogle className="mx-2 text-xl"></FaGoogle> <span>Continue With Google</span>
+            </button>
+         ) : (
+            <button className="btn btn-outline btn-primary hover:bg-blue-700" onClick={handelGoogleSignUp}>
+               <FaGoogle className="mx-2 text-xl"></FaGoogle> <span>Continue With Google</span>
+            </button>
+         )}
       </div>
    );
 };

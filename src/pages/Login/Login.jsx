@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const Login = () => {
-   const { user } = useContext(AuthContext);
+   const { user, logInWithEmailPass } = useContext(AuthContext);
 
    const [show, setShow] = useState(false);
 
@@ -14,7 +14,17 @@ const Login = () => {
       const form = event.target;
       const email = form.email.value;
       const password = form.password.value;
-      console.log(email, password);
+      logInWithEmailPass(email, password)
+         .then((userCredential) => {
+            const user = userCredential.user;
+            toast.success("User Login Successfully");
+            console.log(user);
+            form.reset();
+         })
+         .catch((error) => {
+            const errorMessage = error.message;
+            toast.error(errorMessage);
+         });
    };
    return (
       <div className="hero min-h-screen bg-blue-100">
@@ -34,6 +44,7 @@ const Login = () => {
                            placeholder="email"
                            name="email"
                            className="input input-bordered"
+                           required
                         />
                      </div>
                      <div className="form-control">
@@ -45,6 +56,7 @@ const Login = () => {
                            name="password"
                            placeholder="password"
                            className="input input-bordered"
+                           required
                         />
                         <div className="flex justify-between">
                            <label className="label justify-normal gap-2 label-text-alt">
@@ -68,9 +80,13 @@ const Login = () => {
                         </div>
                      </div>
                      <div className="form-control mt-6">
-                        <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg">
-                           Login
-                        </button>
+                        {user ? (
+                           <button className="font-semibold py-3 px-4 rounded-lg btn-disabled">Login</button>
+                        ) : (
+                           <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg">
+                              Login
+                           </button>
+                        )}
                      </div>
                   </form>
                   <div className="divider">OR</div>

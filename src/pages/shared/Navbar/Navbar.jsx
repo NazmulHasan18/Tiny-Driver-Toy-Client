@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import { toast } from "react-toastify";
+import { FaUserAlt } from "react-icons/fa";
 
 const Navbar = () => {
    const { user, logOut } = useContext(AuthContext);
@@ -45,12 +46,18 @@ const Navbar = () => {
                   <li>
                      <Link to="/all_toys">All Toys</Link>
                   </li>
-                  <li>
-                     <Link to="/my_toys">My Toys</Link>
-                  </li>
-                  <li>
-                     <Link to="/add_toys">Add Toys</Link>
-                  </li>
+                  {user ? (
+                     <>
+                        <li>
+                           <Link to="/my_toys">My Toys</Link>
+                        </li>
+                        <li>
+                           <Link to="/add_toys">Add Toys</Link>
+                        </li>
+                     </>
+                  ) : (
+                     <></>
+                  )}
                   <li>
                      <Link to="/blogs">Blogs</Link>
                   </li>
@@ -68,29 +75,52 @@ const Navbar = () => {
                <li>
                   <Link to="/all_toys">All Toys</Link>
                </li>
-               <li>
-                  <Link to="/my_toys">My Toys</Link>
-               </li>
-               <li>
-                  <Link to="/add_toys">Add Toys</Link>
-               </li>
+               {user ? (
+                  <>
+                     <li>
+                        <Link to="/my_toys">My Toys</Link>
+                     </li>
+                     <li>
+                        <Link to="/add_toys">Add Toys</Link>
+                     </li>
+                  </>
+               ) : (
+                  <></>
+               )}
                <li>
                   <Link to="/blogs">Blogs</Link>
                </li>
             </ul>
          </div>
          <div className="navbar-end">
-            <Link to="/login">
-               <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">
-                  Log In
-               </button>
-            </Link>
-            <button
-               className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded"
-               onClick={handelLogOut}
-            >
-               Log Out
-            </button>
+            {user ? (
+               <>
+                  <div className="avatar">
+                     <div className="w-14 mr-4 rounded-full border-2">
+                        {user.photoURL ? (
+                           <Link to="/profile">
+                              <img src={user.photoURL} alt="" title={user?.displayName} />
+                           </Link>
+                        ) : (
+                           <FaUserAlt className="text-4xl mt-2 ml-2 "></FaUserAlt>
+                        )}
+                     </div>
+                  </div>
+
+                  <button
+                     className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded"
+                     onClick={handelLogOut}
+                  >
+                     Log Out
+                  </button>
+               </>
+            ) : (
+               <Link to="/login">
+                  <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">
+                     Log In
+                  </button>
+               </Link>
+            )}
          </div>
       </div>
    );
