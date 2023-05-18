@@ -5,7 +5,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import { toast } from "react-toastify";
 
 const Register = () => {
-   const { user, signUpWithEmailPass } = useContext(AuthContext);
+   const { user, signUpWithEmailPass, profileUpdater } = useContext(AuthContext);
 
    const [show, setShow] = useState(false);
 
@@ -13,14 +13,22 @@ const Register = () => {
       event.preventDefault();
       const form = event.target;
       const name = form.name.value;
+      const url = form.url.value;
       const email = form.email.value;
       const password = form.password.value;
       signUpWithEmailPass(email, password)
          .then((userCredential) => {
             const user = userCredential.user;
-            toast.success("User Registered Successfully");
-            console.log(user);
-            form.reset();
+            profileUpdater(name, url)
+               .then(() => {
+                  toast.success("User Registered Successfully");
+                  console.log(user);
+                  form.reset();
+               })
+               .catch((error) => {
+                  const errorMessage = error.message;
+                  toast.error(errorMessage);
+               });
          })
          .catch((error) => {
             const errorMessage = error.message;
@@ -46,6 +54,17 @@ const Register = () => {
                            name="name"
                            className="input input-bordered"
                            required
+                        />
+                     </div>
+                     <div className="form-control">
+                        <label className="label">
+                           <span className="label-text">Photo URL</span>
+                        </label>
+                        <input
+                           type="text"
+                           placeholder="Photo URL(optional)"
+                           name="url"
+                           className="input input-bordered"
                         />
                      </div>
                      <div className="form-control">

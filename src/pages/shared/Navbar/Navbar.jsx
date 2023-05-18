@@ -38,7 +38,7 @@ const Navbar = () => {
                </label>
                <ul
                   tabIndex={0}
-                  className="menu menu-compact bg-blue-300 dropdown-content mt-3 p-2 shadow rounded-box w-52"
+                  className="menu menu-compact bg-[#7d9afc] font-semibold dropdown-content mt-3 p-2 shadow rounded-box w-52"
                >
                   <li>
                      <Link to="/">Home</Link>
@@ -68,7 +68,7 @@ const Navbar = () => {
             </Link>
          </div>
          <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal px-1">
+            <ul className="menu menu-horizontal font-semibold px-1">
                <li>
                   <Link to="/">Home</Link>
                </li>
@@ -102,7 +102,7 @@ const Navbar = () => {
                               <img src={user.photoURL} alt="" title={user?.displayName} />
                            </Link>
                         ) : (
-                           <FaUserAlt className="text-4xl mt-2 ml-2 "></FaUserAlt>
+                           <FaUserAlt className="text-4xl mt-2 ml-2 " title={user?.displayName}></FaUserAlt>
                         )}
                      </div>
                   </div>
