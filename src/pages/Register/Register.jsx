@@ -1,20 +1,17 @@
-import { useContext, useState } from "react";
-import GoogleLogin from "../shared/GoogleLogin/GoogleLogin";
-import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../Provider/AuthProvider";
+import GoogleLogin from "../shared/GoogleLogin/GoogleLogin";
+import { useState } from "react";
 
-const Login = () => {
-   const { user } = useContext(AuthContext);
-
+const Register = () => {
    const [show, setShow] = useState(false);
 
-   const handelLogin = (event) => {
+   const handelRegister = (event) => {
       event.preventDefault();
       const form = event.target;
+      const name = form.name.value;
       const email = form.email.value;
       const password = form.password.value;
-      console.log(email, password);
+      console.log(email, password, name);
    };
    return (
       <div className="hero min-h-screen bg-blue-100">
@@ -24,16 +21,29 @@ const Login = () => {
             </div>
             <div className="card w-full shadow-2xl bg-base-100">
                <div className="card-body">
-                  <form onSubmit={handelLogin}>
+                  <form onSubmit={handelRegister}>
+                     <div className="form-control">
+                        <label className="label">
+                           <span className="label-text">Name</span>
+                        </label>
+                        <input
+                           type="text"
+                           placeholder="Name"
+                           name="name"
+                           className="input input-bordered"
+                           required
+                        />
+                     </div>
                      <div className="form-control">
                         <label className="label">
                            <span className="label-text">Email</span>
                         </label>
                         <input
-                           type="text"
+                           type="email"
                            placeholder="email"
                            name="email"
                            className="input input-bordered"
+                           required
                         />
                      </div>
                      <div className="form-control">
@@ -45,31 +55,27 @@ const Login = () => {
                            name="password"
                            placeholder="password"
                            className="input input-bordered"
+                           required
                         />
-                        <div className="flex justify-between">
-                           <label className="label justify-normal gap-2 label-text-alt">
-                              <input type="checkbox" name="showPassword" onChange={() => setShow(!show)} />
-                              Show Password
-                           </label>
-                           <label className="label">
-                              <a href="#" className="label-text-alt link link-hover">
-                                 Forgot password?
-                              </a>
-                           </label>
-                        </div>
+
+                        <label className="label justify-normal gap-2 label-text-alt">
+                           <input type="checkbox" name="showPassword" onChange={() => setShow(!show)} />
+                           Show Password
+                        </label>
+
                         <div>
                            <p className="text-xs my-4">
-                              New Here?{" "}
-                              <Link to="/register" className="hover:underline text-blue-700 font-semibold">
+                              Already Have An Account?{" "}
+                              <Link to="/login" className="hover:underline text-blue-700 font-semibold">
                                  {" "}
-                                 Register.
+                                 Login!!!
                               </Link>
                            </p>
                         </div>
                      </div>
                      <div className="form-control mt-6">
                         <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg">
-                           Login
+                           Register
                         </button>
                      </div>
                   </form>
@@ -82,4 +88,4 @@ const Login = () => {
    );
 };
 
-export default Login;
+export default Register;
