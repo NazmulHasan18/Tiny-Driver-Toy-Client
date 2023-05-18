@@ -1,6 +1,20 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Provider/AuthProvider";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
+   const { user, logOut } = useContext(AuthContext);
+   const handelLogOut = () => {
+      logOut()
+         .then(() => {
+            toast.success("User Log Out Successfully");
+         })
+         .catch((error) => {
+            console.log(error);
+            toast.error(error.message);
+         });
+   };
    return (
       <div className="navbar px-12 bg-[#7d9afc] text-primary-content">
          <div className="navbar-start">
@@ -43,7 +57,7 @@ const Navbar = () => {
                </ul>
             </div>
             <Link to="/">
-               <img src="/logo2.png" className="w-20" alt="" />
+               <img src="/logo2.png" alt="" />
             </Link>
          </div>
          <div className="navbar-center hidden lg:flex">
@@ -71,7 +85,10 @@ const Navbar = () => {
                   Log In
                </button>
             </Link>
-            <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">
+            <button
+               className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded"
+               onClick={handelLogOut}
+            >
                Log Out
             </button>
          </div>
