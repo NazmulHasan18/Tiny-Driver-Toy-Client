@@ -21,7 +21,7 @@ const ViewDetails = () => {
             <img src={picture_url} className="rounded-lg shadow-2xl md:w-1/2 gap-10" data-aos="flip-left" />
             <div className="md:w-2/5 space-y-4">
                <h1
-                  className="text-5xl font-bold"
+                  className="text-5xl font-bold text-blue-600"
                   data-aos-delay="50"
                   data-aos-duration="1000"
                   data-aos="fade-right"

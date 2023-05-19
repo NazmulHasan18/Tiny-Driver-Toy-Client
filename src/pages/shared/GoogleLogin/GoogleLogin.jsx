@@ -2,9 +2,11 @@ import { useContext } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
-const GoogleLogin = () => {
+const GoogleLogin = ({ from }) => {
    const { user, googleSignUp } = useContext(AuthContext);
+   const navigate = useNavigate();
 
    const handelGoogleSignUp = () => {
       googleSignUp()
@@ -12,6 +14,7 @@ const GoogleLogin = () => {
             const user = result.user;
             console.log(user);
             toast.success("User Login Successfully");
+            navigate(from);
          })
          .catch((error) => {
             const errorMessage = error.message;

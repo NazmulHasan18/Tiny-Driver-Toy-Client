@@ -1,11 +1,14 @@
 import { useContext, useState } from "react";
 import GoogleLogin from "../shared/GoogleLogin/GoogleLogin";
 import { toast } from "react-toastify";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const Login = () => {
    const { user, logInWithEmailPass } = useContext(AuthContext);
+   const navigate = useNavigate();
+   const location = useLocation();
+   const from = location?.state?.pathname || "/";
 
    const [show, setShow] = useState(false);
 
@@ -20,6 +23,7 @@ const Login = () => {
             toast.success("User Login Successfully");
             console.log(user);
             form.reset();
+            navigate(from);
          })
          .catch((error) => {
             const errorMessage = error.message;
@@ -72,7 +76,11 @@ const Login = () => {
                         <div>
                            <p className="text-xs my-4">
                               New Here?{" "}
-                              <Link to="/register" className="hover:underline text-blue-700 font-semibold">
+                              <Link
+                                 to="/register"
+                                 className="hover:underline text-blue-700 font-semibold"
+                                 state={location.state}
+                              >
                                  {" "}
                                  Register.
                               </Link>
@@ -90,7 +98,7 @@ const Login = () => {
                      </div>
                   </form>
                   <div className="divider">OR</div>
-                  <GoogleLogin></GoogleLogin>
+                  <GoogleLogin from={from}></GoogleLogin>
                </div>
             </div>
          </div>

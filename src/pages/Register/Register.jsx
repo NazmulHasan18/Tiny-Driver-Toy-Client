@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import GoogleLogin from "../shared/GoogleLogin/GoogleLogin";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
@@ -6,8 +6,10 @@ import { toast } from "react-toastify";
 
 const Register = () => {
    const { user, signUpWithEmailPass, profileUpdater } = useContext(AuthContext);
-
+   const navigate = useNavigate();
    const [show, setShow] = useState(false);
+   const location = useLocation();
+   const from = location?.state?.pathname || "/";
 
    const handelRegister = (event) => {
       event.preventDefault();
@@ -24,6 +26,7 @@ const Register = () => {
                   toast.success("User Registered Successfully");
                   console.log(user);
                   form.reset();
+                  navigate(from);
                })
                .catch((error) => {
                   const errorMessage = error.message;
@@ -119,7 +122,7 @@ const Register = () => {
                      </div>
                   </form>
                   <div className="divider">OR</div>
-                  <GoogleLogin></GoogleLogin>
+                  <GoogleLogin from={from}></GoogleLogin>
                </div>
             </div>
          </div>
