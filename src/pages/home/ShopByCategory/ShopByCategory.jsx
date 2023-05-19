@@ -8,7 +8,7 @@ const ShopByCategory = () => {
    const [subCategories, setSubCategories] = useState([]);
    const [loading, setLoading] = useState(true);
    useEffect(() => {
-      fetch("http://localhost:4000/sub_category")
+      fetch("https://toy-market-place-server.vercel.app/sub_category")
          .then((res) => res.json())
          .then((data) => {
             setSubCategories(data);
@@ -29,6 +29,13 @@ const ShopByCategory = () => {
    }
    return (
       <div data-aos="fade-up">
+         <div className="text-center text-white mb-10 space-y-3">
+            <h2 className="text-5xl font-bold ">But Toy With Category Easily!!</h2>
+            <p className="text-xl font-semibold w-1/2 mx-auto">
+               Explore our wide selection of car toys, including realistic die-cast models, remote-controlled
+               cars, and interactive playsets, to find the perfect toy for car enthusiasts of all ages.
+            </p>
+         </div>
          <Tabs className="bg-white px-4 py-6 my-20">
             <TabList>
                {subCategories.map((subCategory, index) => (

@@ -8,7 +8,7 @@ const SubCategory = ({ subCategory }) => {
    const [click, setClick] = useState(false);
 
    useEffect(() => {
-      fetch(`http://localhost:4000/cars/${subCategory}`)
+      fetch(`https://toy-market-place-server.vercel.app/cars/${subCategory}`)
          .then((res) => res.json())
          .then((data) => {
             setCars(data);

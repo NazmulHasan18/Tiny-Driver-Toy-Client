@@ -17,7 +17,9 @@ const SubCategoryCard = ({ car }) => {
             </div>
             <div className="card-actions">
                <Link to={`/cars/${_id}`}>
-                  <button className="btn btn-primary btn-sm">View Details</button>
+                  <button className="btn btn-primary btn-sm" htmlFor={_id}>
+                     View Details
+                  </button>
                </Link>
             </div>
          </div>

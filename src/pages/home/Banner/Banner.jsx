@@ -3,7 +3,7 @@ const Banner = () => {
       <div className="hero min-h-screen md:px-20" style={{ backgroundImage: "url('/bannerBg.jpg')" }}>
          <div className="hero-content flex-col-reverse lg:flex-row-reverse">
             <div className="md:w-1/2">
-               <img src="/banner.png" className="rounded-lg" />
+               <img src="/banner.png" className="rounded-lg" data-aos="fade-left" data-aos-duration="2000" />
             </div>
             <div className="text-slate-100 font-semibold md:w-1/2 pr-10">
                <h1 className="md:text-6xl font-bold text-4xl">TinyDriverToy.com</h1>

@@ -10,7 +10,7 @@ const Gallery = () => {
    const [cars, setCars] = useState([]);
    const [loading, setLoading] = useState(true);
    useEffect(() => {
-      fetch("http://localhost:4000/car_gallery")
+      fetch("https://toy-market-place-server.vercel.app/car_gallery")
          .then((res) => res.json())
          .then((data) => {
             setCars(data);
@@ -35,7 +35,7 @@ const Gallery = () => {
    return (
       <div className="my-24" data-aos="fade-up">
          <div className="text-center text-white mb-10 space-y-3">
-            <h2 className="text-4xl font-bold ">Car Toy Gallery</h2>
+            <h2 className="text-5xl font-bold ">Car Toy Gallery</h2>
             <p className="text-xl font-semibold">Unleash the Joy of Miniature Racing</p>
          </div>
          <Swiper
