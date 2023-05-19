@@ -33,7 +33,7 @@ const Gallery = () => {
    }
 
    return (
-      <div className="my-24">
+      <div className="my-24" data-aos="fade-up">
          <div className="text-center text-white mb-10 space-y-3">
             <h2 className="text-4xl font-bold ">Car Toy Gallery</h2>
             <p className="text-xl font-semibold">Unleash the Joy of Miniature Racing</p>

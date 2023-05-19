@@ -41,9 +41,11 @@ const SubCategory = ({ subCategory }) => {
                ? cars.map((car) => <SubCategoryCard key={car._id} car={car}></SubCategoryCard>)
                : cars.slice(0, 3).map((car) => <SubCategoryCard key={car._id} car={car}></SubCategoryCard>)}
          </div>
-         <button className="btn btn-outline btn-info" onClick={handelShowMore}>
-            {click ? "Show Less" : "Show More"}
-         </button>
+         {cars.length > 3 && (
+            <button className="btn btn-outline btn-info" onClick={handelShowMore}>
+               {click ? "Show Less" : "Show More"}
+            </button>
+         )}
       </div>
    );
 };

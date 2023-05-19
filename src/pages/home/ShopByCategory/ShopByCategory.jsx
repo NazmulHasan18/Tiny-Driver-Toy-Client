@@ -28,19 +28,21 @@ const ShopByCategory = () => {
       );
    }
    return (
-      <Tabs className="bg-white px-4 py-6 my-20">
-         <TabList>
-            {subCategories.map((subCategory, index) => (
-               <Tab key={index}>{subCategory}</Tab>
-            ))}
-         </TabList>
+      <div data-aos="fade-up">
+         <Tabs className="bg-white px-4 py-6 my-20">
+            <TabList>
+               {subCategories.map((subCategory, index) => (
+                  <Tab key={index}>{subCategory}</Tab>
+               ))}
+            </TabList>
 
-         {subCategories.map((subCategory, index) => (
-            <TabPanel key={index}>
-               <SubCategory subCategory={subCategory}></SubCategory>
-            </TabPanel>
-         ))}
-      </Tabs>
+            {subCategories.map((subCategory, index) => (
+               <TabPanel key={index}>
+                  <SubCategory subCategory={subCategory}></SubCategory>
+               </TabPanel>
+            ))}
+         </Tabs>
+      </div>
    );
 };
 
