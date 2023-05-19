@@ -4,14 +4,33 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-coverflow";
 import { Navigation, Pagination, EffectCoverflow, Autoplay } from "swiper";
+import { ColorRing } from "react-loader-spinner";
 
 const Gallery = () => {
    const [cars, setCars] = useState([]);
+   const [loading, setLoading] = useState(true);
    useEffect(() => {
       fetch("http://localhost:4000/car_gallery")
          .then((res) => res.json())
-         .then((data) => setCars(data));
+         .then((data) => {
+            setCars(data);
+            setLoading(false);
+         });
    }, []);
+
+   if (loading) {
+      return (
+         <ColorRing
+            visible={true}
+            height="80"
+            width="80"
+            ariaLabel="blocks-loading"
+            wrapperStyle={{}}
+            wrapperClass="blocks-wrapper"
+            colors={["#e15b64", "#f47e60", "#f8b26a", "#abbd81", "#849b87"]}
+         />
+      );
+   }
 
    return (
       <div className="my-24">
