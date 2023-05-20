@@ -29,7 +29,7 @@ const SubCategory = ({ subCategory }) => {
             ariaLabel="blocks-loading"
             wrapperStyle={{}}
             wrapperClass="blocks-wrapper"
-            colors={["#e15b64", "#f47e60", "#f8b26a", "#abbd81", "#849b87"]}
+            colors={["#00ffff", "#ffebcd", "#2d2dff", "#87ceeb", "#ff3737"]}
          />
       );
    }

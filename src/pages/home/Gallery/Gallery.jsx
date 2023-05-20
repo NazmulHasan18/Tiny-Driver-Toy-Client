@@ -27,7 +27,7 @@ const Gallery = () => {
             ariaLabel="blocks-loading"
             wrapperStyle={{}}
             wrapperClass="blocks-wrapper"
-            colors={["#e15b64", "#f47e60", "#f8b26a", "#abbd81", "#849b87"]}
+            colors={["#00ffff", "#ffebcd", "#2d2dff", "#87ceeb", "#ff3737"]}
          />
       );
    }
@@ -43,7 +43,7 @@ const Gallery = () => {
             grabCursor={true}
             centeredSlides={true}
             slidesPerView={1}
-            spaceBetween={30}
+            spaceBetween={0}
             autoplay={{
                delay: 3000,
                disableOnInteraction: false,
@@ -55,7 +55,7 @@ const Gallery = () => {
             breakpoints={{
                640: {
                   slidesPerView: 1,
-                  spaceBetween: 20,
+                  spaceBetween: 10,
                },
                768: {
                   slidesPerView: 3,

@@ -13,7 +13,7 @@ const AllToys = () => {
    const [searchText, setSearchText] = useState("");
 
    useEffect(() => {
-      fetch(`http://localhost:4000/all_toys?page=${currentPage}&&search=${searchText}`)
+      fetch(`https://toy-market-place-server.vercel.app/all_toys?page=${currentPage}&&search=${searchText}`)
          .then((res) => res.json())
          .then((data) => {
             setTotalPages(data.totalPages);
@@ -82,7 +82,7 @@ const AllToys = () => {
                ariaLabel="blocks-loading"
                wrapperStyle={{}}
                wrapperClass="blocks-wrapper"
-               colors={["#e15b64", "#f47e60", "#f8b26a", "#abbd81", "#849b87"]}
+               colors={["#00ffff", "#ffebcd", "#2d2dff", "#87ceeb", "#ff3737"]}
             />
          ) : (
             <div>

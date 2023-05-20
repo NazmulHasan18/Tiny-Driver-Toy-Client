@@ -16,8 +16,8 @@ const ViewDetails = () => {
    } = car;
    console.log(car);
    return (
-      <div className="hero min-h-screen bg-base-200 my-20">
-         <div className="hero-content flex-col lg:flex-row">
+      <div className="hero min-h-screen  bg-base-200 my-20">
+         <div className="hero-content w-full flex-col lg:flex-row">
             <img src={picture_url} className="rounded-lg shadow-2xl md:w-1/2 gap-10" data-aos="flip-left" />
             <div className="md:w-2/5 space-y-4">
                <h1
@@ -28,7 +28,7 @@ const ViewDetails = () => {
                >
                   {name}
                </h1>
-               <div data-aos="fade-left" data-aos-delay="60" data-aos-duration="1000">
+               <div data-aos="fade-left" data-aos-delay="60" data-aos-duration="1000 ">
                   <p className="text-2xl font-semibold">
                      Seller: <span>{seller_name}</span>
                   </p>

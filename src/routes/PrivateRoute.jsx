@@ -7,7 +7,7 @@ import { FidgetSpinner } from "react-loader-spinner";
 const PrivateRoute = ({ children }) => {
    const { user, loading } = useContext(AuthContext);
    const location = useLocation();
-   console.log(location);
+   //    console.log(location);
 
    if (loading) {
       return (
@@ -18,8 +18,8 @@ const PrivateRoute = ({ children }) => {
             ariaLabel="dna-loading"
             wrapperStyle={{}}
             wrapperClass="dna-wrapper"
-            ballColors={["#ff0000", "#00ff00", "#0000ff"]}
-            backgroundColor="#F4442E"
+            ballColors={["blue", "red", "yellow"]}
+            backgroundColor="white"
          />
       );
    }

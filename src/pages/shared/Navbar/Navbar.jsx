@@ -81,7 +81,7 @@ const Navbar = () => {
                         <Link to="/my_toys">My Toys</Link>
                      </li>
                      <li>
-                        <Link to="/add_toys">Add Toys</Link>
+                        <Link to="/add_toy">Add Toys</Link>
                      </li>
                   </>
                ) : (
@@ -108,15 +108,15 @@ const Navbar = () => {
                   </div>
 
                   <button
-                     className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded"
+                     className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded btn-sm md:btn-md text-xs md:text-base"
                      onClick={handelLogOut}
                   >
-                     Log Out
+                     LogOut
                   </button>
                </>
             ) : (
                <Link to="/login">
-                  <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">
+                  <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded btn-sm md:btn-md">
                      Log In
                   </button>
                </Link>

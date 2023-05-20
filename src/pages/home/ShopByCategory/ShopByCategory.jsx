@@ -30,14 +30,14 @@ const ShopByCategory = () => {
    return (
       <div data-aos="fade-up">
          <div className="text-center text-white mb-10 space-y-3">
-            <h2 className="text-5xl font-bold ">But Toy With Category Easily!!</h2>
-            <p className="text-xl font-semibold w-1/2 mx-auto">
+            <h2 className="text-3xl md:text-5xl font-bold ">But Toy With Category Easily!!</h2>
+            <p className="md:text-xl font-semibold md:w-1/2 mx-auto">
                Explore our wide selection of car toys, including realistic die-cast models, remote-controlled
                cars, and interactive playsets, to find the perfect toy for car enthusiasts of all ages.
             </p>
          </div>
          <Tabs className="bg-white px-4 py-6 my-20">
-            <TabList>
+            <TabList className="bg-sky-300">
                {subCategories.map((subCategory, index) => (
                   <Tab key={index}>{subCategory}</Tab>
                ))}

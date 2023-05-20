@@ -6,6 +6,7 @@ import Register from "../pages/Register/Register";
 import ViewDetails from "../pages/ViewDetails/ViewDetails";
 import AllToys from "../pages/AllToys/AllToys";
 import PrivateRoute from "./PrivateRoute";
+import AddAToy from "../pages/AddAToy/AddAToy";
 
 const router = createBrowserRouter([
    {
@@ -31,11 +32,20 @@ const router = createBrowserRouter([
                   <ViewDetails></ViewDetails>
                </PrivateRoute>
             ),
-            loader: ({ params }) => fetch(`http://localhost:4000/car_details/${params.id}`),
+            loader: ({ params }) =>
+               fetch(`https://toy-market-place-server.vercel.app/car_details/${params.id}`),
          },
          {
             path: "/all_toys",
             element: <AllToys></AllToys>,
+         },
+         {
+            path: "/add_toy",
+            element: (
+               <PrivateRoute>
+                  <AddAToy></AddAToy>
+               </PrivateRoute>
+            ),
          },
       ],
    },
