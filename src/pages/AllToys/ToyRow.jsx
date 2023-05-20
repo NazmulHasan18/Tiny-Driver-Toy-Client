@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const ToyRow = ({ toy }) => {
+const ToyRow = ({ toy, children }) => {
    const {
       picture_url,
       name,
@@ -22,7 +22,7 @@ const ToyRow = ({ toy }) => {
                   </div>
                </div>
                <div>
-                  <div className="font-bold">
+                  <div className="font-bold text-start">
                      <p className="text-lg">{name}</p>
                      <p className="text-sm text-blue-500 font-semibold">{sub_category}</p>
                      <p className="text-sm text-yellow-500 font-semibold">Rating: {rating}</p>
@@ -45,6 +45,7 @@ const ToyRow = ({ toy }) => {
                <button className="btn btn-info btn-sm text-white">details</button>
             </Link>
          </th>
+         {children && <th>{children}</th>}
       </tr>
    );
 };

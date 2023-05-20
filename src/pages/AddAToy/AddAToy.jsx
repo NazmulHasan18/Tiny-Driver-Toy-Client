@@ -23,7 +23,7 @@ const AddAToy = () => {
          if (result.isConfirmed) {
             Swal.fire("Toy Added!", "", "success");
 
-            fetch("http://localhost:4000/cars/", {
+            fetch("https://toy-market-place-server.vercel.app/cars/", {
                method: "POST",
                headers: {
                   "Content-Type": "application/json",
