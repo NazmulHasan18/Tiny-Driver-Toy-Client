@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const AddAToy = () => {
    const { register, handleSubmit } = useForm();
@@ -61,6 +62,9 @@ const AddAToy = () => {
    //    description,
    return (
       <div className="my-10">
+         <Helmet>
+            <title>Tiny Driver Toy | Add Toy</title>
+         </Helmet>
          <div className="hero min-h-screen bg-base-200 rounded-lg">
             <div className="hero-content w-full flex-col">
                <div className="text-center lg:text-left my-10">

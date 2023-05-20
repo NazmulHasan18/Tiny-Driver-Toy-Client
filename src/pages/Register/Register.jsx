@@ -3,6 +3,7 @@ import GoogleLogin from "../shared/GoogleLogin/GoogleLogin";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
    const { user, signUpWithEmailPass, profileUpdater } = useContext(AuthContext);
@@ -40,6 +41,9 @@ const Register = () => {
    };
    return (
       <div className="hero min-h-screen bg-blue-100">
+         <Helmet>
+            <title>Tiny Driver Toy | Register</title>
+         </Helmet>
          <div className="hero-content w-2/5 flex-col">
             <div className="text-center lg:text-left my-10">
                <h1 className="text-5xl font-bold">Login now!</h1>

@@ -6,6 +6,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import ToyRow from "../AllToys/ToyRow";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const MyToys = () => {
    const { user } = useContext(AuthContext);
@@ -15,16 +16,18 @@ const MyToys = () => {
    const [currentPage, setCurrentPage] = useState(1);
    const [disableNext, setDisableNext] = useState(false);
    const [disablePrevious, setDisablePrevious] = useState(false);
+   const [sortOrder, setSortOrder] = useState("asc");
 
    useEffect(() => {
-      fetch(`https://toy-market-place-server.vercel.app/my_toys/${user?.email}?page=${currentPage}`)
+      fetch(`http://localhost:4000/my_toys/${user?.email}?page=${currentPage}&&sortOrder=${sortOrder}`)
          .then((res) => res.json())
          .then((data) => {
             setTotalPages(data.totalPages);
             setToys(data.toys);
             setLoading(false);
+            // console.log(data.toys);
          });
-   }, [currentPage, user]);
+   }, [currentPage, user, sortOrder]);
 
    const handelDeleteToy = (id, name) => {
       Swal.fire({
@@ -72,13 +75,22 @@ const MyToys = () => {
          setDisableNext(true);
       }
    }, [currentPage, totalPages]);
+   //    sorting code is here
+   const handleSortOrderChange = (event) => {
+      setSortOrder(event.target.value);
+      setLoading(true);
+   };
 
    return (
       <div className="my-16">
+         <Helmet>
+            <title>Tiny Driver Toy | My Toys</title>
+         </Helmet>
          <div className="text-center text-white mb-10 space-y-3">
             <h2 className="text-5xl font-bold ">The Toy You Added</h2>
             <p className="text-xl font-semibold">You can see toy in a list and update them if you want.</p>
          </div>
+
          {loading ? (
             <ColorRing
                visible={true}
@@ -91,6 +103,21 @@ const MyToys = () => {
             />
          ) : (
             <div>
+               <div className="my-5">
+                  <label className="label" htmlFor="sortOrder">
+                     <span className="label-text">Sort Order:</span>
+                  </label>
+                  <select
+                     id="sortOrder"
+                     className="input input-bordered input-info"
+                     value={sortOrder}
+                     onChange={handleSortOrderChange}
+                  >
+                     <option value="asc">Ascending</option>
+                     <option value="desc">Descending</option>
+                  </select>
+               </div>
+
                <div className="overflow-x-auto w-full" data-aos="zoom-in">
                   <table className="table w-full text-center">
                      {/* head */}

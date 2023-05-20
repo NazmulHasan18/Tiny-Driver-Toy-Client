@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import { ColorRing } from "react-loader-spinner";
 import ToyRow from "./ToyRow";
+import { Helmet } from "react-helmet";
 
 const AllToys = () => {
    const [loading, setLoading] = useState(true);
@@ -86,6 +87,9 @@ const AllToys = () => {
             />
          ) : (
             <div>
+               <Helmet>
+                  <title>Tiny Driver Toy | All Toy</title>
+               </Helmet>
                <div className="overflow-x-auto w-full" data-aos="zoom-in">
                   <table className="table w-full">
                      {/* head */}

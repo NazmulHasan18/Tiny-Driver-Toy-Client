@@ -37,7 +37,7 @@ const ShopByCategory = () => {
             </p>
          </div>
          <Tabs className="bg-white px-4 py-6 my-20">
-            <TabList className="bg-sky-300">
+            <TabList className="bg-transparent text-xl border border-blue-300">
                {subCategories.map((subCategory, index) => (
                   <Tab key={index}>{subCategory}</Tab>
                ))}
