@@ -107,7 +107,7 @@ const MyToys = () => {
                         {toys.map((toy) => (
                            <ToyRow key={toy._id} toy={toy}>
                               <div className="flex gap-4 justify-center">
-                                 <Link>
+                                 <Link to={`/update_toy/${toy._id}`}>
                                     <button className="btn btn-warning btn-sm text-white">Update</button>
                                  </Link>
 
