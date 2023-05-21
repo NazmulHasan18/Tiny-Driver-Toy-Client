@@ -10,6 +10,7 @@ import AddAToy from "../pages/AddAToy/AddAToy";
 import MyToys from "../pages/MyToys/MyToys";
 import UpdateToy from "../pages/UpdateToy/UpdateToy";
 import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
+import Blogs from "../pages/Blogs/Blogs";
 
 const router = createBrowserRouter([
    {
@@ -68,6 +69,10 @@ const router = createBrowserRouter([
             ),
             loader: ({ params }) =>
                fetch(`https://toy-market-place-server.vercel.app/car_details/${params.id}`),
+         },
+         {
+            path: "/blogs",
+            element: <Blogs></Blogs>,
          },
       ],
    },

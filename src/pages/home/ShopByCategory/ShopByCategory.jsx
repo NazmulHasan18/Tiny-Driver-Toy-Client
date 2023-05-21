@@ -36,7 +36,7 @@ const ShopByCategory = () => {
                cars, and interactive playsets, to find the perfect toy for car enthusiasts of all ages.
             </p>
          </div>
-         <Tabs className="bg-white px-4 py-6 my-20">
+         <Tabs className="bg-white px-4 py-6 my-20 rounded-lg">
             <TabList className="bg-transparent text-xl border border-blue-300">
                {subCategories.map((subCategory, index) => (
                   <Tab key={index}>{subCategory}</Tab>
