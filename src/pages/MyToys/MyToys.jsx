@@ -127,7 +127,7 @@ const MyToys = () => {
                         <tr>
                            <th>Toy</th>
                            <th>Seller</th>
-                           <th>Favorite Color</th>
+                           <th>Price & Rating</th>
                            <th>Action</th>
                            <th>Edit</th>
                         </tr>
@@ -155,7 +155,7 @@ const MyToys = () => {
                         <tr>
                            <th>Toy</th>
                            <th>Seller</th>
-                           <th>Favorite Color</th>
+                           <th>Price & Rating</th>
                            <th>Action</th>
                            <th>Edit</th>
                         </tr>
