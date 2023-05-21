@@ -36,7 +36,7 @@ const Login = () => {
          <Helmet>
             <title>Tiny Driver Toy | Login</title>
          </Helmet>
-         <div className="hero-content w-2/5 flex-col">
+         <div className="hero-content md:w-2/5 w-full flex-col">
             <div className="text-center lg:text-left my-10">
                <h1 className="text-5xl font-bold">Login now!</h1>
             </div>

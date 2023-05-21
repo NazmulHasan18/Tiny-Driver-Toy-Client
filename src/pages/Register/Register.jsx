@@ -44,9 +44,9 @@ const Register = () => {
          <Helmet>
             <title>Tiny Driver Toy | Register</title>
          </Helmet>
-         <div className="hero-content w-2/5 flex-col">
+         <div className="hero-content  md:w-2/5 w-full flex-col">
             <div className="text-center lg:text-left my-10">
-               <h1 className="text-5xl font-bold">Login now!</h1>
+               <h1 className="text-5xl font-bold">Register Here!</h1>
             </div>
             <div className="card w-full shadow-2xl bg-base-100">
                <div className="card-body">
