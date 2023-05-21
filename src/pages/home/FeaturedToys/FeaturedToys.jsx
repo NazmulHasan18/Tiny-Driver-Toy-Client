@@ -12,7 +12,7 @@ const FeaturedToys = () => {
    const [cars, setCars] = useState([]);
    const [loading, setLoading] = useState(true);
    useEffect(() => {
-      fetch("http://localhost:4000/featureToys")
+      fetch("https://toy-market-place-server.vercel.app/featureToys")
          .then((res) => res.json())
          .then((data) => {
             setCars(data);
