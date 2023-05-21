@@ -48,8 +48,8 @@ const AddReview = () => {
    return (
       <div className="my-24">
          <div className="text-center text-white mb-10 space-y-3">
-            <h2 className="text-5xl font-bold ">Add Review</h2>
-            <p className="text-xl font-semibold">Leave A Review For Us What Do You Think About Us.</p>
+            <h2 className="text-3xl md:text-5xl font-bold ">Add Review</h2>
+            <p className="md:text-xl px-5 font-semibold">Leave A Review For Us What Do You Think About Us.</p>
          </div>
          <form className="bg-white p-10 rounded-lg" onSubmit={handelReviewPost}>
             <div className="md:flex gap-10">
@@ -79,7 +79,7 @@ const AddReview = () => {
                         required
                      />
                   </div>
-                  <button type="submit" className="btn btn-info w-48 text-white">
+                  <button type="submit" className="btn btn-info w-48 mx-auto md:mx-0 text-white">
                      Add Review
                   </button>
                </div>
