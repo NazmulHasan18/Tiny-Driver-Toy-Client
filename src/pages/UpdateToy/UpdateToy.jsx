@@ -27,7 +27,7 @@ const UpdateToy = () => {
       }).then((result) => {
          //  Read more about isConfirmed, isDenied below
          if (result.isConfirmed) {
-            fetch(`http://localhost:4000/update_toy/${loadedToy._id}`, {
+            fetch(`https://toy-market-place-server.vercel.app/update_toy/${loadedToy._id}`, {
                method: "PATCH",
                headers: {
                   "Content-Type": "application/json",

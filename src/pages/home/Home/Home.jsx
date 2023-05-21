@@ -1,3 +1,4 @@
+import AddReview from "../AddReview/AddReview";
 import Banner from "../Banner/Banner";
 import CustomerReview from "../CustomerReview/CustomerReview";
 import Gallery from "../Gallery/Gallery";
@@ -10,6 +11,7 @@ const Home = () => {
          <Gallery></Gallery>
          <ShopByCategory></ShopByCategory>
          <CustomerReview></CustomerReview>
+         <AddReview></AddReview>
       </div>
    );
 };

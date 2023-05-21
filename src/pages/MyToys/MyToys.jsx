@@ -19,7 +19,9 @@ const MyToys = () => {
    const [sortOrder, setSortOrder] = useState("asc");
 
    useEffect(() => {
-      fetch(`http://localhost:4000/my_toys/${user?.email}?page=${currentPage}&&sortOrder=${sortOrder}`)
+      fetch(
+         `https://toy-market-place-server.vercel.app/my_toys/${user?.email}?page=${currentPage}&&sortOrder=${sortOrder}`
+      )
          .then((res) => res.json())
          .then((data) => {
             setTotalPages(data.totalPages);
