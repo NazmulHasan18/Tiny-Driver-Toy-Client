@@ -88,7 +88,7 @@ const MyToys = () => {
          <Helmet>
             <title>Tiny Driver Toy | My Toys</title>
          </Helmet>
-         <div className="text-center text-white mb-10 space-y-3">
+         <div className="text-center mb-10 space-y-3">
             <h2 className="text-5xl font-bold ">The Toy You Added</h2>
             <p className="text-xl font-semibold">You can see toy in a list and update them if you want.</p>
          </div>

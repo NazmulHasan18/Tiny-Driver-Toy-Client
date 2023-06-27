@@ -28,9 +28,9 @@ const ShopByCategory = () => {
       );
    }
    return (
-      <div data-aos="fade-up">
-         <div className="text-center text-white mb-10 space-y-3">
-            <h2 className="text-3xl md:text-5xl font-bold ">But Toy With Category Easily!!</h2>
+      <div data-aos="fade-up" id="categories">
+         <div className="text-center mb-10 space-y-3">
+            <h2 className="text-3xl md:text-5xl font-bold ">Shop Toy With Category Easily!!</h2>
             <p className="md:text-xl font-semibold md:w-1/2 mx-auto">
                Explore our wide selection of car toys, including realistic die-cast models, remote-controlled
                cars, and interactive playsets, to find the perfect toy for car enthusiasts of all ages.

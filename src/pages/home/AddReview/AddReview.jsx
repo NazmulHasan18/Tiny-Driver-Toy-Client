@@ -47,7 +47,7 @@ const AddReview = () => {
 
    return (
       <div className="my-24" data-aos="fade-up">
-         <div className="text-center text-white mb-10 space-y-3">
+         <div className="text-center mb-10 space-y-3">
             <h2 className="text-3xl md:text-5xl font-bold ">Add Review</h2>
             <p className="md:text-xl px-5 font-semibold">Leave A Review For Us What Do You Think About Us.</p>
          </div>

@@ -19,7 +19,7 @@ const CustomerReview = () => {
 
    return (
       <div className="mb-14" data-aos="fade-up">
-         <div className="text-center text-white mb-10 space-y-3">
+         <div className="text-center mb-10 space-y-3">
             <h2 className="text-3xl md:text-5xl font-bold ">Customer Review</h2>
             <p className="md:text-xl px-5 font-semibold">
                Some Of Our Client Word! Watch what they says about us.

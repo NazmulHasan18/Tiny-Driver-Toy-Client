@@ -35,7 +35,7 @@ const FeaturedToys = () => {
    }
    return (
       <div className="my-24" data-aos="fade-up">
-         <div className="text-center text-white mb-10 space-y-3">
+         <div className="text-center mb-10 space-y-3">
             <h2 className="text-5xl font-bold ">Feature Toys</h2>
             <p className="text-xl font-semibold">The toys are customer Linking most You can buy them</p>
          </div>
