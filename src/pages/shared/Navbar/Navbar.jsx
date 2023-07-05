@@ -18,24 +18,24 @@ const Navbar = () => {
    };
    return (
       <div className="bg-black bg-opacity-50">
-         <div className="mx-auto px-10 py-4 flex justify-between items-center">
+         <div className="mx-auto px-10 pt-4 flex justify-between items-center">
             <div>
-               <button className="btn btn-primary text-xl">
+               <button className="btn bg-sky-500 border border-sky-500 hover:bg-sky-700 hover:border-sky-700">
                   Add to cart
-                  <div className="badge badge-secondary ml-4">+99</div>
+                  <div className="badge badge-secondary ml-4">+0</div>
                </button>
             </div>
             <Link to="/">
                <img src="/logo2.png" alt="" />
             </Link>
             <div>
-               <button className="btn btn-secondary text-xl">
+               <button className="btn bg-sky-500 border border-sky-500 hover:bg-sky-700 hover:border-sky-700">
                   Contact US <FaPhone className="ml-4"></FaPhone>
                </button>
             </div>
          </div>
 
-         <div className="navbar px-12 pt-6 text-primary-content">
+         <div className="navbar px-12 p-6 text-primary-content">
             <div className="navbar-start">
                <div className="dropdown">
                   <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -126,7 +126,7 @@ const Navbar = () => {
                      </div>
 
                      <button
-                        className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded btn-sm md:btn-md text-xs md:text-base"
+                        className="bg-sky-500 hover:bg-sky-700 text-white font-semibold py-2 px-4 rounded btn-sm md:btn-md text-xs md:text-base"
                         onClick={handelLogOut}
                      >
                         LogOut
@@ -134,7 +134,7 @@ const Navbar = () => {
                   </>
                ) : (
                   <Link to="/login">
-                     <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded btn-sm md:btn-md">
+                     <button className="bg-sky-500 text-lg hover:bg-sky-700 text-white font-semibold py-2 px-4 rounded btn-sm md:btn-md">
                         Log In
                      </button>
                   </Link>

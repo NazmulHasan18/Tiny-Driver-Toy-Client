@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const SubCategoryCard = ({ car }) => {
    const { picture_url, name, price, rating, _id } = car;
    return (
-      <div className="card w-full md:w-96 bg-base-100 shadow-xl">
+      <div className="card w-full md:w-96 bg-sky-200 shadow-xl">
          <figure className="px-5 pt-5">
             <img src={picture_url} alt="Shoes" className="rounded-xl w-full md:w-80 h-60" />
          </figure>

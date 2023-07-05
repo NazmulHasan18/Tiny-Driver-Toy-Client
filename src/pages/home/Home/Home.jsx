@@ -10,11 +10,13 @@ const Home = () => {
    return (
       <div>
          <Banner></Banner>
-         <Gallery></Gallery>
-         <ShopByCategory></ShopByCategory>
-         <FeaturedToys></FeaturedToys>
-         <CustomerReview></CustomerReview>
-         <AddReview></AddReview>
+         <div className="container mx-auto">
+            <Gallery></Gallery>
+            <ShopByCategory></ShopByCategory>
+            <FeaturedToys></FeaturedToys>
+            <CustomerReview></CustomerReview>
+            <AddReview></AddReview>
+         </div>
       </div>
    );
 };
